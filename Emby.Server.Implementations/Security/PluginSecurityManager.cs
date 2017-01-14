@@ -250,7 +250,9 @@ namespace Emby.Server.Implementations.Security
                 IsRegistered = true,
                 ExpirationDate = DateTime.Now.AddYears(1),
                 RegChecked = true,
-                RegError = false
+                RegError = false,
+                TrialVersion = false,
+                IsValid = true
             };
             /*
             var regInfo = LicenseFile.GetRegInfo(feature);
