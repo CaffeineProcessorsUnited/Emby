@@ -1494,7 +1494,7 @@
         };
 
         self.getRegistrationInfo = function (feature, apiClient) {
-
+            return Promise.resolve();
             var params = {
                 serverId: apiClient.serverInfo().Id,
                 deviceId: self.deviceId(),
