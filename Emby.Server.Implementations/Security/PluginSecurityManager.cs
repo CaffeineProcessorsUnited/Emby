@@ -245,6 +245,14 @@ namespace Emby.Server.Implementations.Security
             string mb2Equivalent = null,
             string version = null)
         {
+            return new MBRegistrationRecord
+            {
+                IsRegistered = true,
+                ExpirationDate = DateTime.Now.AddYears(1),
+                RegChecked = true,
+                RegError = false
+            };
+            /*
             var regInfo = LicenseFile.GetRegInfo(feature);
             var lastChecked = regInfo == null ? DateTime.MinValue : regInfo.LastChecked;
             var expDate = regInfo == null ? DateTime.MinValue : regInfo.ExpirationDate;
@@ -328,6 +336,7 @@ namespace Emby.Server.Implementations.Security
             record.IsValid = !record.RegChecked || record.IsRegistered || record.TrialVersion;
 
             return record;
+            */
         }
 
         private bool IsInTrial(DateTime expirationDate, bool regChecked, bool isRegistered)
